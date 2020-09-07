@@ -1,0 +1,37 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"15 Timer1_Prog.c
+[; ;Timer1_Prog.c: 15: void Timer1_Init_Comp (void)
+[v _Timer1_Init_Comp `(v ~T0 @X0 1 ef ]
+"16
+[; ;Timer1_Prog.c: 16: {
+{
+[e :U _Timer1_Init_Comp ]
+[f ]
+"18
+[; ;Timer1_Prog.c: 18:     (*((volatile u8*)0x0E)) = 0 ;
+[e = *U -> -> 14 `i `*Vuc -> -> 0 `i `uc ]
+"19
+[; ;Timer1_Prog.c: 19:     (*((volatile u8*)0x0F)) = 0 ;
+[e = *U -> -> 15 `i `*Vuc -> -> 0 `i `uc ]
+"27
+[; ;Timer1_Prog.c: 27:     (*((volatile u8*)0x10)) = 0b00100001 ;
+[e = *U -> -> 16 `i `*Vuc -> -> 33 `i `uc ]
+"33
+[; ;Timer1_Prog.c: 33:     (*((volatile u8*)0x17)) = 0b00001011 ;
+[e = *U -> -> 23 `i `*Vuc -> -> 11 `i `uc ]
+"36
+[; ;Timer1_Prog.c: 36:     (*((volatile u16*)0x15)) = 1000 ;
+[e = *U -> -> 21 `i `*Vus -> -> 1000 `i `us ]
+"39
+[; ;Timer1_Prog.c: 39:     ((*((volatile u8*)0x8C))) |= (1 << (2)) ;
+[e =| *U -> -> 140 `i `*Vuc -> << -> 1 `i -> 2 `i `uc ]
+"42
+[; ;Timer1_Prog.c: 42:     ((*((volatile u8*)0x0B))) |= (1 << (6)) ;
+[e =| *U -> -> 11 `i `*Vuc -> << -> 1 `i -> 6 `i `uc ]
+"45
+[; ;Timer1_Prog.c: 45:     ((*((volatile u8*)0x0B))) |= (1 << (7)) ;
+[e =| *U -> -> 11 `i `*Vuc -> << -> 1 `i -> 7 `i `uc ]
+"47
+[; ;Timer1_Prog.c: 47: }
+[e :UE 1 ]
+}

@@ -1,0 +1,173 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"41 ./DIO_Interface.h
+[; ;./DIO_Interface.h: 41: void DIO_SetPinDirection (u8 u8PortIdCopy, u8 u8PinIdCopy, u8 u8PinDirCopy);
+[v _DIO_SetPinDirection `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"17 UART_Prog.c
+[; ;UART_Prog.c: 17:  extern u8 u8_DataRead ;
+[v _u8_DataRead `uc ~T0 @X0 0 e ]
+"20 UART_Prog.c
+[; ;UART_Prog.c: 20: void UART_TransmitterInit (void)
+[v _UART_TransmitterInit `(v ~T0 @X0 1 ef ]
+"21
+[; ;UART_Prog.c: 21: {
+{
+[e :U _UART_TransmitterInit ]
+[f ]
+"22
+[; ;UART_Prog.c: 22:     ((*((volatile u8*)0x98))) |= (1 << (2)) ;
+[e =| *U -> -> 152 `i `*Vuc -> << -> 1 `i -> 2 `i `uc ]
+"23
+[; ;UART_Prog.c: 23:     (*((volatile u8*)0x99)) = 25 ;
+[e = *U -> -> 153 `i `*Vuc -> -> 25 `i `uc ]
+"26
+[; ;UART_Prog.c: 26:     ((*((volatile u8*)0x98))) &= ~(1 << (4)) ;
+[e =& *U -> -> 152 `i `*Vuc -> ~ << -> 1 `i -> 4 `i `uc ]
+"27
+[; ;UART_Prog.c: 27:     ((*((volatile u8*)0x18))) |= (1 << (7)) ;
+[e =| *U -> -> 24 `i `*Vuc -> << -> 1 `i -> 7 `i `uc ]
+"30
+[; ;UART_Prog.c: 30:     DIO_SetPinDirection(2 , 6 , 0) ;
+[e ( _DIO_SetPinDirection (3 , , -> -> 2 `i `uc -> -> 6 `i `uc -> -> 0 `i `uc ]
+"31
+[; ;UART_Prog.c: 31:     DIO_SetPinDirection(2 , 7 , 0) ;
+[e ( _DIO_SetPinDirection (3 , , -> -> 2 `i `uc -> -> 7 `i `uc -> -> 0 `i `uc ]
+"33
+[; ;UART_Prog.c: 33:     ((*((volatile u8*)0x98))) |= (1 << (5)) ;
+[e =| *U -> -> 152 `i `*Vuc -> << -> 1 `i -> 5 `i `uc ]
+"34
+[; ;UART_Prog.c: 34: }
+[e :UE 1 ]
+}
+"38
+[; ;UART_Prog.c: 38: void UART_RecieverInit (void)
+[v _UART_RecieverInit `(v ~T0 @X0 1 ef ]
+"39
+[; ;UART_Prog.c: 39: {
+{
+[e :U _UART_RecieverInit ]
+[f ]
+"40
+[; ;UART_Prog.c: 40:     ((*((volatile u8*)0x98))) |= (1 << (2)) ;
+[e =| *U -> -> 152 `i `*Vuc -> << -> 1 `i -> 2 `i `uc ]
+"41
+[; ;UART_Prog.c: 41:     (*((volatile u8*)0x99)) = 25 ;
+[e = *U -> -> 153 `i `*Vuc -> -> 25 `i `uc ]
+"44
+[; ;UART_Prog.c: 44:     ((*((volatile u8*)0x98))) &= ~(1 << (4)) ;
+[e =& *U -> -> 152 `i `*Vuc -> ~ << -> 1 `i -> 4 `i `uc ]
+"45
+[; ;UART_Prog.c: 45:     ((*((volatile u8*)0x18))) |= (1 << (7)) ;
+[e =| *U -> -> 24 `i `*Vuc -> << -> 1 `i -> 7 `i `uc ]
+"48
+[; ;UART_Prog.c: 48:     DIO_SetPinDirection(2 , 6 , 0) ;
+[e ( _DIO_SetPinDirection (3 , , -> -> 2 `i `uc -> -> 6 `i `uc -> -> 0 `i `uc ]
+"49
+[; ;UART_Prog.c: 49:     DIO_SetPinDirection(2 , 7 , 0) ;
+[e ( _DIO_SetPinDirection (3 , , -> -> 2 `i `uc -> -> 7 `i `uc -> -> 0 `i `uc ]
+"52
+[; ;UART_Prog.c: 52:     ((*((volatile u8*)0x8C))) |= (1 << (5));
+[e =| *U -> -> 140 `i `*Vuc -> << -> 1 `i -> 5 `i `uc ]
+"53
+[; ;UART_Prog.c: 53:     ((*((volatile u8*)0x0B))) |= (1 << (6)) ;
+[e =| *U -> -> 11 `i `*Vuc -> << -> 1 `i -> 6 `i `uc ]
+"54
+[; ;UART_Prog.c: 54:     ((*((volatile u8*)0x0B))) |= (1 << (7)) ;
+[e =| *U -> -> 11 `i `*Vuc -> << -> 1 `i -> 7 `i `uc ]
+"56
+[; ;UART_Prog.c: 56:     ((*((volatile u8*)0x18))) |= (1 << (4)) ;
+[e =| *U -> -> 24 `i `*Vuc -> << -> 1 `i -> 4 `i `uc ]
+"57
+[; ;UART_Prog.c: 57: }
+[e :UE 2 ]
+}
+"61
+[; ;UART_Prog.c: 61: void UART_SendByte (u8 u8_Data)
+[v _UART_SendByte `(v ~T0 @X0 1 ef1`uc ]
+"62
+[; ;UART_Prog.c: 62: {
+{
+[e :U _UART_SendByte ]
+"61
+[; ;UART_Prog.c: 61: void UART_SendByte (u8 u8_Data)
+[v _u8_Data `uc ~T0 @X0 1 r1 ]
+"62
+[; ;UART_Prog.c: 62: {
+[f ]
+"63
+[; ;UART_Prog.c: 63:     while (!(((((*((volatile u8*)0x98))) >> (1)) & 0x01))) ;
+[e $U 4  ]
+[e :U 5 ]
+[e :U 4 ]
+[e $ ! != & >> -> *U -> -> 152 `i `*Vuc `i -> 1 `i -> 1 `i -> 0 `i 5  ]
+[e :U 6 ]
+"64
+[; ;UART_Prog.c: 64:     (*((volatile u8*)0x19)) = u8_Data ;
+[e = *U -> -> 25 `i `*Vuc _u8_Data ]
+"65
+[; ;UART_Prog.c: 65: }
+[e :UE 3 ]
+}
+"69
+[; ;UART_Prog.c: 69: u8 UART_RecieveByte (void)
+[v _UART_RecieveByte `(uc ~T0 @X0 1 ef ]
+"70
+[; ;UART_Prog.c: 70: {
+{
+[e :U _UART_RecieveByte ]
+[f ]
+"71
+[; ;UART_Prog.c: 71:     while (!(((((*((volatile u8*)0x0C))) >> (5)) & 0x01))) ;
+[e $U 8  ]
+[e :U 9 ]
+[e :U 8 ]
+[e $ ! != & >> -> *U -> -> 12 `i `*Vuc `i -> 5 `i -> 1 `i -> 0 `i 9  ]
+[e :U 10 ]
+"72
+[; ;UART_Prog.c: 72:     return (*((volatile u8*)0x1A)) ;
+[e ) *U -> -> 26 `i `*Vuc ]
+[e $UE 7  ]
+"73
+[; ;UART_Prog.c: 73: }
+[e :UE 7 ]
+}
+[v $root$_ISR `(v ~T0 @X0 0 e ]
+"77
+[; ;UART_Prog.c: 77: void __attribute__((picinterrupt(("")))) ISR (void)
+[v _ISR `(v ~T1 @X0 1 ef ]
+"78
+[; ;UART_Prog.c: 78: {
+{
+[e :U _ISR ]
+[f ]
+"79
+[; ;UART_Prog.c: 79:     if ( ((((*((volatile u8*)0x0C))) >> (5)) & 0x01) )
+[e $ ! != & >> -> *U -> -> 12 `i `*Vuc `i -> 5 `i -> 1 `i -> 0 `i 12  ]
+"80
+[; ;UART_Prog.c: 80:     {
+{
+"81
+[; ;UART_Prog.c: 81:         u8_DataRead = (*((volatile u8*)0x1A)) ;
+[e = _u8_DataRead *U -> -> 26 `i `*Vuc ]
+"82
+[; ;UART_Prog.c: 82:         ((*((volatile u8*)0x0C))) &= ~(1 << (5)) ;
+[e =& *U -> -> 12 `i `*Vuc -> ~ << -> 1 `i -> 5 `i `uc ]
+"83
+[; ;UART_Prog.c: 83:     }
+}
+[e $U 13  ]
+"84
+[; ;UART_Prog.c: 84:     else
+[e :U 12 ]
+"85
+[; ;UART_Prog.c: 85:     {
+{
+"87
+[; ;UART_Prog.c: 87:     }
+}
+[e :U 13 ]
+"89
+[; ;UART_Prog.c: 89: }
+[e :UE 11 ]
+}

@@ -1,0 +1,70 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"43 ./DIO_Interface.h
+[; ;./DIO_Interface.h: 43: void DIO_SetPinDirection (u8 u8PortIdCopy, u8 u8PinIdCopy, u8 u8PinDirCopy);
+[v _DIO_SetPinDirection `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"19 program.c
+[; ;program.c: 19: void vid_SystemInit (void)
+[v _vid_SystemInit `(v ~T0 @X0 1 ef ]
+"20
+[; ;program.c: 20: {
+{
+[e :U _vid_SystemInit ]
+[f ]
+"21
+[; ;program.c: 21:  DIO_SetPinDirection (2, 0, 1);
+[e ( _DIO_SetPinDirection (3 , , -> -> 2 `i `uc -> -> 0 `i `uc -> -> 1 `i `uc ]
+"22
+[; ;program.c: 22:  DIO_SetPinDirection (2, 1, 1);
+[e ( _DIO_SetPinDirection (3 , , -> -> 2 `i `uc -> -> 1 `i `uc -> -> 1 `i `uc ]
+"23
+[; ;program.c: 23:  DIO_SetPinDirection (2, 2, 1);
+[e ( _DIO_SetPinDirection (3 , , -> -> 2 `i `uc -> -> 2 `i `uc -> -> 1 `i `uc ]
+"25
+[; ;program.c: 25: }
+[e :UE 1 ]
+}
+"29
+[; ;program.c: 29: void RedLed_TOG (void)
+[v _RedLed_TOG `(v ~T0 @X0 1 ef ]
+"30
+[; ;program.c: 30: {
+{
+[e :U _RedLed_TOG ]
+[f ]
+"31
+[; ;program.c: 31:  ((*((volatile u8*)0x07))) ^= (1 << (0)) ;
+[e =^ *U -> -> 7 `i `*Vuc -> << -> 1 `i -> 0 `i `uc ]
+"32
+[; ;program.c: 32: }
+[e :UE 2 ]
+}
+"36
+[; ;program.c: 36: void GreenLed_TOG (void)
+[v _GreenLed_TOG `(v ~T0 @X0 1 ef ]
+"37
+[; ;program.c: 37: {
+{
+[e :U _GreenLed_TOG ]
+[f ]
+"38
+[; ;program.c: 38:  ((*((volatile u8*)0x07))) ^= (1 << (1)) ;
+[e =^ *U -> -> 7 `i `*Vuc -> << -> 1 `i -> 1 `i `uc ]
+"40
+[; ;program.c: 40: }
+[e :UE 3 ]
+}
+"44
+[; ;program.c: 44: void YellowLed_TOG (void)
+[v _YellowLed_TOG `(v ~T0 @X0 1 ef ]
+"45
+[; ;program.c: 45: {
+{
+[e :U _YellowLed_TOG ]
+[f ]
+"46
+[; ;program.c: 46:  ((*((volatile u8*)0x07))) ^= (1 << (2)) ;
+[e =^ *U -> -> 7 `i `*Vuc -> << -> 1 `i -> 2 `i `uc ]
+"48
+[; ;program.c: 48: }
+[e :UE 4 ]
+}

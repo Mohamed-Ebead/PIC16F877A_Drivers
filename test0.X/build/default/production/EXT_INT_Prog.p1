@@ -1,0 +1,59 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"43 ./DIO_Interface.h
+[; ;./DIO_Interface.h: 43: void DIO_SetPinDirection (u8 u8PortIdCopy, u8 u8PinIdCopy, u8 u8PinDirCopy);
+[v _DIO_SetPinDirection `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"15 EXT_INT_Prog.c
+[; ;EXT_INT_Prog.c: 15: void EXT_INT_Init (void)
+[v _EXT_INT_Init `(v ~T0 @X0 1 ef ]
+"16
+[; ;EXT_INT_Prog.c: 16: {
+{
+[e :U _EXT_INT_Init ]
+[f ]
+"17
+[; ;EXT_INT_Prog.c: 17:     DIO_SetPinDirection ( 1 , 0 , 0 ) ;
+[e ( _DIO_SetPinDirection (3 , , -> -> 1 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+"18
+[; ;EXT_INT_Prog.c: 18:     ((*((volatile u8*)0x81))) |= (1 << (6)) ;
+[e =| *U -> -> 129 `i `*Vuc -> << -> 1 `i -> 6 `i `uc ]
+"19
+[; ;EXT_INT_Prog.c: 19:     ((*((volatile u8*)0x0B))) |= (1 << (4)) ;
+[e =| *U -> -> 11 `i `*Vuc -> << -> 1 `i -> 4 `i `uc ]
+"20
+[; ;EXT_INT_Prog.c: 20:     ((*((volatile u8*)0x0B))) |= (1 << (7)) ;
+[e =| *U -> -> 11 `i `*Vuc -> << -> 1 `i -> 7 `i `uc ]
+"21
+[; ;EXT_INT_Prog.c: 21: }
+[e :UE 1 ]
+}
+[v $root$_ISR `(v ~T0 @X0 0 e ]
+"25
+[; ;EXT_INT_Prog.c: 25: void __attribute__((picinterrupt(("")))) ISR (void)
+[v _ISR `(v ~T1 @X0 1 ef ]
+"26
+[; ;EXT_INT_Prog.c: 26: {
+{
+[e :U _ISR ]
+[f ]
+"27
+[; ;EXT_INT_Prog.c: 27:     if (((((*((volatile u8*)0x0B))) >> (1)) & 0x01))
+[e $ ! != & >> -> *U -> -> 11 `i `*Vuc `i -> 1 `i -> 1 `i -> 0 `i 3  ]
+"28
+[; ;EXT_INT_Prog.c: 28:     {
+{
+"29
+[; ;EXT_INT_Prog.c: 29:      ((*((volatile u8*)0x05))) ^= (1 << (0)) ;
+[e =^ *U -> -> 5 `i `*Vuc -> << -> 1 `i -> 0 `i `uc ]
+"30
+[; ;EXT_INT_Prog.c: 30:      ((*((volatile u8*)0x0B))) &= ~(1 << (1)) ;
+[e =& *U -> -> 11 `i `*Vuc -> ~ << -> 1 `i -> 1 `i `uc ]
+"31
+[; ;EXT_INT_Prog.c: 31:     }
+}
+[e :U 3 ]
+"32
+[; ;EXT_INT_Prog.c: 32: }
+[e :UE 2 ]
+}

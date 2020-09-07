@@ -1,0 +1,89 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"17 E:\Black_Box\Embedded\Microcontroller Interfacing\PIC\New Folder\eeprom_24c04.X\DIO_Prog.c
+[v _DIO_SetPinDirection DIO_SetPinDirection `(v  1 e 1 0 ]
+"9 E:\Black_Box\Embedded\Microcontroller Interfacing\PIC\New Folder\eeprom_24c04.X\EEPROM_I2c.c
+[v _EEPROM_Write EEPROM_Write `(v  1 e 1 0 ]
+"15 E:\Black_Box\Embedded\Microcontroller Interfacing\PIC\New Folder\eeprom_24c04.X\I2c.c
+[v _I2C_init I2C_init `(v  1 e 1 0 ]
+"37
+[v _I2C_wait I2C_wait `(v  1 e 1 0 ]
+"43
+[v _I2C_start I2C_start `(v  1 e 1 0 ]
+"59
+[v _I2C_stop I2C_stop `(v  1 e 1 0 ]
+"66
+[v _I2C_write I2C_write `(v  1 e 1 0 ]
+"26 E:\Black_Box\Embedded\Microcontroller Interfacing\PIC\New Folder\eeprom_24c04.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"1754 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h
+[v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
+"26 E:\Black_Box\Embedded\Microcontroller Interfacing\PIC\New Folder\eeprom_24c04.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"33
+[v main@arr arr `[2]uc  1 a 2 8 ]
+"31
+[v main@F896 F896 `[2]uc  1 s 2 F896 ]
+"51
+} 0
+"15 E:\Black_Box\Embedded\Microcontroller Interfacing\PIC\New Folder\eeprom_24c04.X\I2c.c
+[v _I2C_init I2C_init `(v  1 e 1 0 ]
+{
+"35
+} 0
+"17 E:\Black_Box\Embedded\Microcontroller Interfacing\PIC\New Folder\eeprom_24c04.X\DIO_Prog.c
+[v _DIO_SetPinDirection DIO_SetPinDirection `(v  1 e 1 0 ]
+{
+[v DIO_SetPinDirection@u8PortIdCopy u8PortIdCopy `uc  1 a 1 wreg ]
+[v DIO_SetPinDirection@u8PortIdCopy u8PortIdCopy `uc  1 a 1 wreg ]
+[v DIO_SetPinDirection@u8PinIdCopy u8PinIdCopy `uc  1 p 1 0 ]
+[v DIO_SetPinDirection@u8PinDirCopy u8PinDirCopy `uc  1 p 1 1 ]
+"20
+[v DIO_SetPinDirection@u8PortIdCopy u8PortIdCopy `uc  1 a 1 4 ]
+"56
+} 0
+"9 E:\Black_Box\Embedded\Microcontroller Interfacing\PIC\New Folder\eeprom_24c04.X\EEPROM_I2c.c
+[v _EEPROM_Write EEPROM_Write `(v  1 e 1 0 ]
+{
+[v EEPROM_Write@data data `uc  1 a 1 wreg ]
+[v EEPROM_Write@data data `uc  1 a 1 wreg ]
+"11
+[v EEPROM_Write@data data `uc  1 a 1 1 ]
+"19
+} 0
+"66 E:\Black_Box\Embedded\Microcontroller Interfacing\PIC\New Folder\eeprom_24c04.X\I2c.c
+[v _I2C_write I2C_write `(v  1 e 1 0 ]
+{
+[v I2C_write@data data `uc  1 a 1 wreg ]
+[v I2C_write@data data `uc  1 a 1 wreg ]
+"68
+[v I2C_write@data data `uc  1 a 1 0 ]
+"71
+} 0
+"59
+[v _I2C_stop I2C_stop `(v  1 e 1 0 ]
+{
+"64
+} 0
+"43
+[v _I2C_start I2C_start `(v  1 e 1 0 ]
+{
+"52
+} 0
+"37
+[v _I2C_wait I2C_wait `(v  1 e 1 0 ]
+{
+"41
+} 0

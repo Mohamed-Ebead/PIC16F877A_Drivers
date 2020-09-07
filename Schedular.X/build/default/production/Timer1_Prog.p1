@@ -1,0 +1,94 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F28 `(v ~T0 @X0 0 tf ]
+[v F31 `(v ~T0 @X0 0 tf ]
+[v F33 `(v ~T0 @X0 0 tf ]
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"14 Timer1_Prog.c
+[; ;Timer1_Prog.c: 14: static void(*Global_pFn)(void) ;
+[v _Global_pFn `*F28 ~T0 @X0 1 s ]
+"18
+[; ;Timer1_Prog.c: 18: void Timer1_Init_Comp (void)
+[v _Timer1_Init_Comp `(v ~T0 @X0 1 ef ]
+"19
+[; ;Timer1_Prog.c: 19: {
+{
+[e :U _Timer1_Init_Comp ]
+[f ]
+"21
+[; ;Timer1_Prog.c: 21:     (*((volatile u8*)0x0E)) = 0 ;
+[e = *U -> -> 14 `i `*Vuc -> -> 0 `i `uc ]
+"22
+[; ;Timer1_Prog.c: 22:     (*((volatile u8*)0x0F)) = 0 ;
+[e = *U -> -> 15 `i `*Vuc -> -> 0 `i `uc ]
+"30
+[; ;Timer1_Prog.c: 30:     (*((volatile u8*)0x10)) = 0b00100001 ;
+[e = *U -> -> 16 `i `*Vuc -> -> 33 `i `uc ]
+"36
+[; ;Timer1_Prog.c: 36:     (*((volatile u8*)0x17)) = 0b00001011 ;
+[e = *U -> -> 23 `i `*Vuc -> -> 11 `i `uc ]
+"39
+[; ;Timer1_Prog.c: 39:     (*((volatile u16*)0x15)) = 1000 ;
+[e = *U -> -> 21 `i `*Vus -> -> 1000 `i `us ]
+"42
+[; ;Timer1_Prog.c: 42:     ((*((volatile u8*)0x8C))) |= (1 << (2)) ;
+[e =| *U -> -> 140 `i `*Vuc -> << -> 1 `i -> 2 `i `uc ]
+"45
+[; ;Timer1_Prog.c: 45:     ((*((volatile u8*)0x0B))) |= (1 << (6)) ;
+[e =| *U -> -> 11 `i `*Vuc -> << -> 1 `i -> 6 `i `uc ]
+"48
+[; ;Timer1_Prog.c: 48:     ((*((volatile u8*)0x0B))) |= (1 << (7)) ;
+[e =| *U -> -> 11 `i `*Vuc -> << -> 1 `i -> 7 `i `uc ]
+"50
+[; ;Timer1_Prog.c: 50: }
+[e :UE 1 ]
+}
+"54
+[; ;Timer1_Prog.c: 54:  void Timer_SetCallBack (void (*local_pFn)(void))
+[v _Timer_SetCallBack `(v ~T0 @X0 1 ef1`*F31 ]
+"55
+[; ;Timer1_Prog.c: 55: {
+{
+[e :U _Timer_SetCallBack ]
+"54
+[; ;Timer1_Prog.c: 54:  void Timer_SetCallBack (void (*local_pFn)(void))
+[v _local_pFn `*F33 ~T0 @X0 1 r1 ]
+"55
+[; ;Timer1_Prog.c: 55: {
+[f ]
+"56
+[; ;Timer1_Prog.c: 56:  Global_pFn = local_pFn ;
+[e = _Global_pFn _local_pFn ]
+"58
+[; ;Timer1_Prog.c: 58: }
+[e :UE 2 ]
+}
+[v $root$_ISR `(v ~T0 @X0 0 e ]
+"62
+[; ;Timer1_Prog.c: 62: void __attribute__((picinterrupt(("")))) ISR (void)
+[v _ISR `(v ~T1 @X0 1 ef ]
+"63
+[; ;Timer1_Prog.c: 63: {
+{
+[e :U _ISR ]
+[f ]
+"64
+[; ;Timer1_Prog.c: 64:     if (((((*((volatile u8*)0x0C))) >> (2)) & 0x01))
+[e $ ! != & >> -> *U -> -> 12 `i `*Vuc `i -> 2 `i -> 1 `i -> 0 `i 4  ]
+"65
+[; ;Timer1_Prog.c: 65:     {
+{
+"66
+[; ;Timer1_Prog.c: 66:         Global_pFn () ;
+[e ( *U _Global_pFn ..  ]
+"67
+[; ;Timer1_Prog.c: 67:         ((*((volatile u8*)0x0C))) &= ~(1 << (2)) ;
+[e =& *U -> -> 12 `i `*Vuc -> ~ << -> 1 `i -> 2 `i `uc ]
+"69
+[; ;Timer1_Prog.c: 69:     }
+}
+[e :U 4 ]
+"70
+[; ;Timer1_Prog.c: 70: }
+[e :UE 3 ]
+}

@@ -1,0 +1,62 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"17 E:\Black_Box\Embedded\Microcontroller Interfacing\PIC\New Folder\Timer1_Compare.X\DIO_Prog.c
+[v _DIO_SetPinDirection DIO_SetPinDirection `(v  1 e 1 0 ]
+"61
+[v _DIO_SetPinValue DIO_SetPinValue `(v  1 e 1 0 ]
+"21 E:\Black_Box\Embedded\Microcontroller Interfacing\PIC\New Folder\Timer1_Compare.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"15 E:\Black_Box\Embedded\Microcontroller Interfacing\PIC\New Folder\Timer1_Compare.X\Timer1_Prog.c
+[v _Timer1_Init_Comp Timer1_Init_Comp `(v  1 e 1 0 ]
+"51
+[v _ISR ISR `II(v  1 e 1 0 ]
+"19 E:\Black_Box\Embedded\Microcontroller Interfacing\PIC\New Folder\Timer1_Compare.X\main.c
+[v _x x `us  1 e 2 0 ]
+"21
+[v _main main `(v  1 e 1 0 ]
+{
+"34
+} 0
+"15 E:\Black_Box\Embedded\Microcontroller Interfacing\PIC\New Folder\Timer1_Compare.X\Timer1_Prog.c
+[v _Timer1_Init_Comp Timer1_Init_Comp `(v  1 e 1 0 ]
+{
+"47
+} 0
+"61 E:\Black_Box\Embedded\Microcontroller Interfacing\PIC\New Folder\Timer1_Compare.X\DIO_Prog.c
+[v _DIO_SetPinValue DIO_SetPinValue `(v  1 e 1 0 ]
+{
+[v DIO_SetPinValue@u8PortIdCopy u8PortIdCopy `uc  1 a 1 wreg ]
+[v DIO_SetPinValue@u8PortIdCopy u8PortIdCopy `uc  1 a 1 wreg ]
+[v DIO_SetPinValue@u8PinIdCopy u8PinIdCopy `uc  1 p 1 4 ]
+[v DIO_SetPinValue@u8PinValCopy u8PinValCopy `uc  1 p 1 5 ]
+"64
+[v DIO_SetPinValue@u8PortIdCopy u8PortIdCopy `uc  1 a 1 0 ]
+"101
+} 0
+"17
+[v _DIO_SetPinDirection DIO_SetPinDirection `(v  1 e 1 0 ]
+{
+[v DIO_SetPinDirection@u8PortIdCopy u8PortIdCopy `uc  1 a 1 wreg ]
+[v DIO_SetPinDirection@u8PortIdCopy u8PortIdCopy `uc  1 a 1 wreg ]
+[v DIO_SetPinDirection@u8PinIdCopy u8PinIdCopy `uc  1 p 1 4 ]
+[v DIO_SetPinDirection@u8PinDirCopy u8PinDirCopy `uc  1 p 1 5 ]
+"20
+[v DIO_SetPinDirection@u8PortIdCopy u8PortIdCopy `uc  1 a 1 0 ]
+"56
+} 0
+"51 E:\Black_Box\Embedded\Microcontroller Interfacing\PIC\New Folder\Timer1_Compare.X\Timer1_Prog.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"67
+} 0

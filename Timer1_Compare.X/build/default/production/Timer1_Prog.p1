@@ -1,0 +1,90 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"12 Timer1_Prog.c
+[; ;Timer1_Prog.c: 12: extern u16 x ;
+[v _x `us ~T0 @X0 0 e ]
+"15 Timer1_Prog.c
+[; ;Timer1_Prog.c: 15: void Timer1_Init_Comp (void)
+[v _Timer1_Init_Comp `(v ~T0 @X0 1 ef ]
+"16
+[; ;Timer1_Prog.c: 16: {
+{
+[e :U _Timer1_Init_Comp ]
+[f ]
+"18
+[; ;Timer1_Prog.c: 18:     (*((volatile u8*)0x0E)) = 0 ;
+[e = *U -> -> 14 `i `*Vuc -> -> 0 `i `uc ]
+"19
+[; ;Timer1_Prog.c: 19:     (*((volatile u8*)0x0F)) = 0 ;
+[e = *U -> -> 15 `i `*Vuc -> -> 0 `i `uc ]
+"27
+[; ;Timer1_Prog.c: 27:     (*((volatile u8*)0x10)) = 0b00100001 ;
+[e = *U -> -> 16 `i `*Vuc -> -> 33 `i `uc ]
+"33
+[; ;Timer1_Prog.c: 33:     (*((volatile u8*)0x17)) = 0b00001011 ;
+[e = *U -> -> 23 `i `*Vuc -> -> 11 `i `uc ]
+"36
+[; ;Timer1_Prog.c: 36:     (*((volatile u16*)0x15)) = 1000 ;
+[e = *U -> -> 21 `i `*Vus -> -> 1000 `i `us ]
+"39
+[; ;Timer1_Prog.c: 39:     ((*((volatile u8*)0x8C))) |= (1 << (2)) ;
+[e =| *U -> -> 140 `i `*Vuc -> << -> 1 `i -> 2 `i `uc ]
+"42
+[; ;Timer1_Prog.c: 42:     ((*((volatile u8*)0x0B))) |= (1 << (6)) ;
+[e =| *U -> -> 11 `i `*Vuc -> << -> 1 `i -> 6 `i `uc ]
+"45
+[; ;Timer1_Prog.c: 45:     ((*((volatile u8*)0x0B))) |= (1 << (7)) ;
+[e =| *U -> -> 11 `i `*Vuc -> << -> 1 `i -> 7 `i `uc ]
+"47
+[; ;Timer1_Prog.c: 47: }
+[e :UE 1 ]
+}
+[v $root$_ISR `(v ~T0 @X0 0 e ]
+"51
+[; ;Timer1_Prog.c: 51: void __attribute__((picinterrupt(("")))) ISR (void)
+[v _ISR `(v ~T1 @X0 1 ef ]
+"52
+[; ;Timer1_Prog.c: 52: {
+{
+[e :U _ISR ]
+[f ]
+"53
+[; ;Timer1_Prog.c: 53:     if (((((*((volatile u8*)0x0C))) >> (2)) & 0x01))
+[e $ ! != & >> -> *U -> -> 12 `i `*Vuc `i -> 2 `i -> 1 `i -> 0 `i 3  ]
+"54
+[; ;Timer1_Prog.c: 54:     {
+{
+"55
+[; ;Timer1_Prog.c: 55:         x++ ;
+[e ++ _x -> -> 1 `i `us ]
+"56
+[; ;Timer1_Prog.c: 56:         if (x==1000)
+[e $ ! == -> _x `ui -> -> 1000 `i `ui 4  ]
+"57
+[; ;Timer1_Prog.c: 57:         {
+{
+"59
+[; ;Timer1_Prog.c: 59:             ((*((volatile u8*)0x07))) ^= (1 << (0)) ;
+[e =^ *U -> -> 7 `i `*Vuc -> << -> 1 `i -> 0 `i `uc ]
+"60
+[; ;Timer1_Prog.c: 60:             x=0 ;
+[e = _x -> -> 0 `i `us ]
+"61
+[; ;Timer1_Prog.c: 61:         }
+}
+[e :U 4 ]
+"62
+[; ;Timer1_Prog.c: 62:         ((*((volatile u8*)0x0C))) &= ~(1 << (2)) ;
+[e =& *U -> -> 12 `i `*Vuc -> ~ << -> 1 `i -> 2 `i `uc ]
+"65
+[; ;Timer1_Prog.c: 65:     }
+}
+[e :U 3 ]
+"66
+[; ;Timer1_Prog.c: 66:     ((*((volatile u8*)0x0C))) &= ~(1 << (2)) ;
+[e =& *U -> -> 12 `i `*Vuc -> ~ << -> 1 `i -> 2 `i `uc ]
+"67
+[; ;Timer1_Prog.c: 67: }
+[e :UE 2 ]
+}

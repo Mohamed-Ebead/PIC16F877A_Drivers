@@ -1,0 +1,494 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"17 DIO_Prog.c
+[; ;DIO_Prog.c: 17: void DIO_SetPinDirection (u8 u8PortIdCopy, u8 u8PinIdCopy, u8 u8PinDirCopy)
+[v _DIO_SetPinDirection `(v ~T0 @X0 1 ef3`uc`uc`uc ]
+"18
+[; ;DIO_Prog.c: 18: {
+{
+[e :U _DIO_SetPinDirection ]
+"17
+[; ;DIO_Prog.c: 17: void DIO_SetPinDirection (u8 u8PortIdCopy, u8 u8PinIdCopy, u8 u8PinDirCopy)
+[v _u8PortIdCopy `uc ~T0 @X0 1 r1 ]
+[v _u8PinIdCopy `uc ~T0 @X0 1 r2 ]
+[v _u8PinDirCopy `uc ~T0 @X0 1 r3 ]
+"18
+[; ;DIO_Prog.c: 18: {
+[f ]
+"20
+[; ;DIO_Prog.c: 20:  if ((u8PortIdCopy <= 3) && (u8PinIdCopy <= 7))
+[e $ ! && <= -> _u8PortIdCopy `i -> 3 `i <= -> _u8PinIdCopy `i -> 7 `i 2  ]
+"21
+[; ;DIO_Prog.c: 21:  {
+{
+"22
+[; ;DIO_Prog.c: 22:   if ( u8PinDirCopy == 1 )
+[e $ ! == -> _u8PinDirCopy `i -> 1 `i 3  ]
+"23
+[; ;DIO_Prog.c: 23:   {
+{
+"25
+[; ;DIO_Prog.c: 25:    switch (u8PortIdCopy)
+[e $U 5  ]
+"26
+[; ;DIO_Prog.c: 26:    {
+{
+"27
+[; ;DIO_Prog.c: 27:     case 0: ((*((volatile u8*)0x85))) &= ~(1 << (u8PinIdCopy)); break;
+[e :U 6 ]
+[e =& *U -> -> 133 `i `*Vuc -> ~ << -> 1 `i -> _u8PinIdCopy `i `uc ]
+[e $U 4  ]
+"28
+[; ;DIO_Prog.c: 28:     case 1: ((*((volatile u8*)0x86))) &= ~(1 << (u8PinIdCopy)); break;
+[e :U 7 ]
+[e =& *U -> -> 134 `i `*Vuc -> ~ << -> 1 `i -> _u8PinIdCopy `i `uc ]
+[e $U 4  ]
+"29
+[; ;DIO_Prog.c: 29:     case 2: ((*((volatile u8*)0x87))) &= ~(1 << (u8PinIdCopy)); break;
+[e :U 8 ]
+[e =& *U -> -> 135 `i `*Vuc -> ~ << -> 1 `i -> _u8PinIdCopy `i `uc ]
+[e $U 4  ]
+"30
+[; ;DIO_Prog.c: 30:     case 3: ((*((volatile u8*)0x88))) &= ~(1 << (u8PinIdCopy)); break;
+[e :U 9 ]
+[e =& *U -> -> 136 `i `*Vuc -> ~ << -> 1 `i -> _u8PinIdCopy `i `uc ]
+[e $U 4  ]
+"31
+[; ;DIO_Prog.c: 31:    }
+}
+[e $U 4  ]
+[e :U 5 ]
+[e [\ -> _u8PortIdCopy `i , $ -> 0 `i 6
+ , $ -> 1 `i 7
+ , $ -> 2 `i 8
+ , $ -> 3 `i 9
+ 4 ]
+[e :U 4 ]
+"32
+[; ;DIO_Prog.c: 32:   }
+}
+[e $U 10  ]
+"34
+[; ;DIO_Prog.c: 34:   else if ( u8PinDirCopy == 0 )
+[e :U 3 ]
+[e $ ! == -> _u8PinDirCopy `i -> 0 `i 11  ]
+"35
+[; ;DIO_Prog.c: 35:   {
+{
+"37
+[; ;DIO_Prog.c: 37:    switch (u8PortIdCopy)
+[e $U 13  ]
+"38
+[; ;DIO_Prog.c: 38:    {
+{
+"39
+[; ;DIO_Prog.c: 39:     case 0: ((*((volatile u8*)0x85))) |= (1 << (u8PinIdCopy)); break;
+[e :U 14 ]
+[e =| *U -> -> 133 `i `*Vuc -> << -> 1 `i -> _u8PinIdCopy `i `uc ]
+[e $U 12  ]
+"40
+[; ;DIO_Prog.c: 40:     case 1: ((*((volatile u8*)0x86))) |= (1 << (u8PinIdCopy)); break;
+[e :U 15 ]
+[e =| *U -> -> 134 `i `*Vuc -> << -> 1 `i -> _u8PinIdCopy `i `uc ]
+[e $U 12  ]
+"41
+[; ;DIO_Prog.c: 41:     case 2: ((*((volatile u8*)0x87))) |= (1 << (u8PinIdCopy)); break;
+[e :U 16 ]
+[e =| *U -> -> 135 `i `*Vuc -> << -> 1 `i -> _u8PinIdCopy `i `uc ]
+[e $U 12  ]
+"42
+[; ;DIO_Prog.c: 42:     case 3: ((*((volatile u8*)0x88))) |= (1 << (u8PinIdCopy)); break;
+[e :U 17 ]
+[e =| *U -> -> 136 `i `*Vuc -> << -> 1 `i -> _u8PinIdCopy `i `uc ]
+[e $U 12  ]
+"43
+[; ;DIO_Prog.c: 43:    }
+}
+[e $U 12  ]
+[e :U 13 ]
+[e [\ -> _u8PortIdCopy `i , $ -> 0 `i 14
+ , $ -> 1 `i 15
+ , $ -> 2 `i 16
+ , $ -> 3 `i 17
+ 12 ]
+[e :U 12 ]
+"44
+[; ;DIO_Prog.c: 44:   }
+}
+[e $U 18  ]
+"46
+[; ;DIO_Prog.c: 46:   else
+[e :U 11 ]
+"47
+[; ;DIO_Prog.c: 47:   {
+{
+"49
+[; ;DIO_Prog.c: 49:   }
+}
+[e :U 18 ]
+[e :U 10 ]
+"50
+[; ;DIO_Prog.c: 50:  }
+}
+[e $U 19  ]
+"52
+[; ;DIO_Prog.c: 52:  else
+[e :U 2 ]
+"53
+[; ;DIO_Prog.c: 53:  {
+{
+"55
+[; ;DIO_Prog.c: 55:  }
+}
+[e :U 19 ]
+"56
+[; ;DIO_Prog.c: 56: }
+[e :UE 1 ]
+}
+"61
+[; ;DIO_Prog.c: 61: void DIO_SetPinValue(u8 u8PortIdCopy , u8 u8PinIdCopy, u8 u8PinValCopy)
+[v _DIO_SetPinValue `(v ~T0 @X0 1 ef3`uc`uc`uc ]
+"62
+[; ;DIO_Prog.c: 62: {
+{
+[e :U _DIO_SetPinValue ]
+"61
+[; ;DIO_Prog.c: 61: void DIO_SetPinValue(u8 u8PortIdCopy , u8 u8PinIdCopy, u8 u8PinValCopy)
+[v _u8PortIdCopy `uc ~T0 @X0 1 r1 ]
+[v _u8PinIdCopy `uc ~T0 @X0 1 r2 ]
+[v _u8PinValCopy `uc ~T0 @X0 1 r3 ]
+"62
+[; ;DIO_Prog.c: 62: {
+[f ]
+"64
+[; ;DIO_Prog.c: 64:  if ((u8PortIdCopy <= 3) && (u8PinIdCopy <= 7))
+[e $ ! && <= -> _u8PortIdCopy `i -> 3 `i <= -> _u8PinIdCopy `i -> 7 `i 21  ]
+"65
+[; ;DIO_Prog.c: 65:  {
+{
+"66
+[; ;DIO_Prog.c: 66:   if (u8PinValCopy == 1)
+[e $ ! == -> _u8PinValCopy `i -> 1 `i 22  ]
+"67
+[; ;DIO_Prog.c: 67:   {
+{
+"69
+[; ;DIO_Prog.c: 69:    switch (u8PortIdCopy)
+[e $U 24  ]
+"70
+[; ;DIO_Prog.c: 70:    {
+{
+"71
+[; ;DIO_Prog.c: 71:     case 0: ((*((volatile u8*)0x05))) |= (1 << (u8PinIdCopy)); break;
+[e :U 25 ]
+[e =| *U -> -> 5 `i `*Vuc -> << -> 1 `i -> _u8PinIdCopy `i `uc ]
+[e $U 23  ]
+"72
+[; ;DIO_Prog.c: 72:     case 1: ((*((volatile u8*)0x06))) |= (1 << (u8PinIdCopy)); break;
+[e :U 26 ]
+[e =| *U -> -> 6 `i `*Vuc -> << -> 1 `i -> _u8PinIdCopy `i `uc ]
+[e $U 23  ]
+"73
+[; ;DIO_Prog.c: 73:     case 2: ((*((volatile u8*)0x07))) |= (1 << (u8PinIdCopy)); break;
+[e :U 27 ]
+[e =| *U -> -> 7 `i `*Vuc -> << -> 1 `i -> _u8PinIdCopy `i `uc ]
+[e $U 23  ]
+"74
+[; ;DIO_Prog.c: 74:     case 3: ((*((volatile u8*)0x08))) |= (1 << (u8PinIdCopy)); break;
+[e :U 28 ]
+[e =| *U -> -> 8 `i `*Vuc -> << -> 1 `i -> _u8PinIdCopy `i `uc ]
+[e $U 23  ]
+"75
+[; ;DIO_Prog.c: 75:    }
+}
+[e $U 23  ]
+[e :U 24 ]
+[e [\ -> _u8PortIdCopy `i , $ -> 0 `i 25
+ , $ -> 1 `i 26
+ , $ -> 2 `i 27
+ , $ -> 3 `i 28
+ 23 ]
+[e :U 23 ]
+"77
+[; ;DIO_Prog.c: 77:   }
+}
+[e $U 29  ]
+"79
+[; ;DIO_Prog.c: 79:   else if (u8PinValCopy == 0)
+[e :U 22 ]
+[e $ ! == -> _u8PinValCopy `i -> 0 `i 30  ]
+"80
+[; ;DIO_Prog.c: 80:   {
+{
+"82
+[; ;DIO_Prog.c: 82:    switch (u8PortIdCopy)
+[e $U 32  ]
+"83
+[; ;DIO_Prog.c: 83:    {
+{
+"84
+[; ;DIO_Prog.c: 84:     case 0: ((*((volatile u8*)0x05))) &= ~(1 << (u8PinIdCopy)); break;
+[e :U 33 ]
+[e =& *U -> -> 5 `i `*Vuc -> ~ << -> 1 `i -> _u8PinIdCopy `i `uc ]
+[e $U 31  ]
+"85
+[; ;DIO_Prog.c: 85:     case 1: ((*((volatile u8*)0x06))) &= ~(1 << (u8PinIdCopy)); break;
+[e :U 34 ]
+[e =& *U -> -> 6 `i `*Vuc -> ~ << -> 1 `i -> _u8PinIdCopy `i `uc ]
+[e $U 31  ]
+"86
+[; ;DIO_Prog.c: 86:     case 2: ((*((volatile u8*)0x07))) &= ~(1 << (u8PinIdCopy)); break;
+[e :U 35 ]
+[e =& *U -> -> 7 `i `*Vuc -> ~ << -> 1 `i -> _u8PinIdCopy `i `uc ]
+[e $U 31  ]
+"87
+[; ;DIO_Prog.c: 87:     case 3: ((*((volatile u8*)0x08))) &= ~(1 << (u8PinIdCopy)); break;
+[e :U 36 ]
+[e =& *U -> -> 8 `i `*Vuc -> ~ << -> 1 `i -> _u8PinIdCopy `i `uc ]
+[e $U 31  ]
+"88
+[; ;DIO_Prog.c: 88:    }
+}
+[e $U 31  ]
+[e :U 32 ]
+[e [\ -> _u8PortIdCopy `i , $ -> 0 `i 33
+ , $ -> 1 `i 34
+ , $ -> 2 `i 35
+ , $ -> 3 `i 36
+ 31 ]
+[e :U 31 ]
+"89
+[; ;DIO_Prog.c: 89:   }
+}
+[e $U 37  ]
+"91
+[; ;DIO_Prog.c: 91:   else
+[e :U 30 ]
+"92
+[; ;DIO_Prog.c: 92:   {
+{
+"94
+[; ;DIO_Prog.c: 94:   }
+}
+[e :U 37 ]
+[e :U 29 ]
+"95
+[; ;DIO_Prog.c: 95:  }
+}
+[e $U 38  ]
+"97
+[; ;DIO_Prog.c: 97:  else
+[e :U 21 ]
+"98
+[; ;DIO_Prog.c: 98:  {
+{
+"100
+[; ;DIO_Prog.c: 100:  }
+}
+[e :U 38 ]
+"101
+[; ;DIO_Prog.c: 101: }
+[e :UE 20 ]
+}
+"105
+[; ;DIO_Prog.c: 105: u8 DIO_GetPinValue(u8 u8PortIdCopy, u8 u8PinIdCopy)
+[v _DIO_GetPinValue `(uc ~T0 @X0 1 ef2`uc`uc ]
+"106
+[; ;DIO_Prog.c: 106: {
+{
+[e :U _DIO_GetPinValue ]
+"105
+[; ;DIO_Prog.c: 105: u8 DIO_GetPinValue(u8 u8PortIdCopy, u8 u8PinIdCopy)
+[v _u8PortIdCopy `uc ~T0 @X0 1 r1 ]
+[v _u8PinIdCopy `uc ~T0 @X0 1 r2 ]
+"106
+[; ;DIO_Prog.c: 106: {
+[f ]
+"108
+[; ;DIO_Prog.c: 108:  u8 u8ResultLocal;
+[v _u8ResultLocal `uc ~T0 @X0 1 a ]
+"110
+[; ;DIO_Prog.c: 110:  if ((u8PortIdCopy <= 3) && (u8PinIdCopy <= 7))
+[e $ ! && <= -> _u8PortIdCopy `i -> 3 `i <= -> _u8PinIdCopy `i -> 7 `i 40  ]
+"111
+[; ;DIO_Prog.c: 111:  {
+{
+"113
+[; ;DIO_Prog.c: 113:   switch (u8PortIdCopy)
+[e $U 42  ]
+"114
+[; ;DIO_Prog.c: 114:   {
+{
+"115
+[; ;DIO_Prog.c: 115:    case 0: u8ResultLocal= ((((*((volatile u8*)0x05))) >> (u8PinIdCopy)) & 0x01); break;
+[e :U 43 ]
+[e = _u8ResultLocal -> & >> -> *U -> -> 5 `i `*Vuc `i -> _u8PinIdCopy `i -> 1 `i `uc ]
+[e $U 41  ]
+"116
+[; ;DIO_Prog.c: 116:    case 1: u8ResultLocal= ((((*((volatile u8*)0x06))) >> (u8PinIdCopy)) & 0x01); break;
+[e :U 44 ]
+[e = _u8ResultLocal -> & >> -> *U -> -> 6 `i `*Vuc `i -> _u8PinIdCopy `i -> 1 `i `uc ]
+[e $U 41  ]
+"117
+[; ;DIO_Prog.c: 117:    case 2: u8ResultLocal= ((((*((volatile u8*)0x07))) >> (u8PinIdCopy)) & 0x01); break;
+[e :U 45 ]
+[e = _u8ResultLocal -> & >> -> *U -> -> 7 `i `*Vuc `i -> _u8PinIdCopy `i -> 1 `i `uc ]
+[e $U 41  ]
+"118
+[; ;DIO_Prog.c: 118:    case 3: u8ResultLocal= ((((*((volatile u8*)0x08))) >> (u8PinIdCopy)) & 0x01); break;
+[e :U 46 ]
+[e = _u8ResultLocal -> & >> -> *U -> -> 8 `i `*Vuc `i -> _u8PinIdCopy `i -> 1 `i `uc ]
+[e $U 41  ]
+"119
+[; ;DIO_Prog.c: 119:   }
+}
+[e $U 41  ]
+[e :U 42 ]
+[e [\ -> _u8PortIdCopy `i , $ -> 0 `i 43
+ , $ -> 1 `i 44
+ , $ -> 2 `i 45
+ , $ -> 3 `i 46
+ 41 ]
+[e :U 41 ]
+"120
+[; ;DIO_Prog.c: 120:  }
+}
+[e $U 47  ]
+"122
+[; ;DIO_Prog.c: 122:  else
+[e :U 40 ]
+"123
+[; ;DIO_Prog.c: 123:  {
+{
+"125
+[; ;DIO_Prog.c: 125:   u8ResultLocal = 0xFF;
+[e = _u8ResultLocal -> -> 255 `i `uc ]
+"126
+[; ;DIO_Prog.c: 126:  }
+}
+[e :U 47 ]
+"128
+[; ;DIO_Prog.c: 128:  return u8ResultLocal;
+[e ) _u8ResultLocal ]
+[e $UE 39  ]
+"129
+[; ;DIO_Prog.c: 129: }
+[e :UE 39 ]
+}
+"133
+[; ;DIO_Prog.c: 133: void DIO_SetPortDirection (u8 u8PortId, u8 u8PortDir)
+[v _DIO_SetPortDirection `(v ~T0 @X0 1 ef2`uc`uc ]
+"134
+[; ;DIO_Prog.c: 134: {
+{
+[e :U _DIO_SetPortDirection ]
+"133
+[; ;DIO_Prog.c: 133: void DIO_SetPortDirection (u8 u8PortId, u8 u8PortDir)
+[v _u8PortId `uc ~T0 @X0 1 r1 ]
+[v _u8PortDir `uc ~T0 @X0 1 r2 ]
+"134
+[; ;DIO_Prog.c: 134: {
+[f ]
+"136
+[; ;DIO_Prog.c: 136:  switch (u8PortId)
+[e $U 50  ]
+"137
+[; ;DIO_Prog.c: 137:  {
+{
+"138
+[; ;DIO_Prog.c: 138:    case 0: (*((volatile u8*)0x85)) = u8PortDir; break;
+[e :U 51 ]
+[e = *U -> -> 133 `i `*Vuc _u8PortDir ]
+[e $U 49  ]
+"139
+[; ;DIO_Prog.c: 139:    case 1: (*((volatile u8*)0x86)) = u8PortDir; break;
+[e :U 52 ]
+[e = *U -> -> 134 `i `*Vuc _u8PortDir ]
+[e $U 49  ]
+"140
+[; ;DIO_Prog.c: 140:    case 2: (*((volatile u8*)0x87)) = u8PortDir; break;
+[e :U 53 ]
+[e = *U -> -> 135 `i `*Vuc _u8PortDir ]
+[e $U 49  ]
+"141
+[; ;DIO_Prog.c: 141:    case 3: (*((volatile u8*)0x88)) = u8PortDir; break;
+[e :U 54 ]
+[e = *U -> -> 136 `i `*Vuc _u8PortDir ]
+[e $U 49  ]
+"142
+[; ;DIO_Prog.c: 142:   default: break;
+[e :U 55 ]
+[e $U 49  ]
+"143
+[; ;DIO_Prog.c: 143:  }
+}
+[e $U 49  ]
+[e :U 50 ]
+[e [\ -> _u8PortId `i , $ -> 0 `i 51
+ , $ -> 1 `i 52
+ , $ -> 2 `i 53
+ , $ -> 3 `i 54
+ 55 ]
+[e :U 49 ]
+"144
+[; ;DIO_Prog.c: 144: }
+[e :UE 48 ]
+}
+"148
+[; ;DIO_Prog.c: 148: void DIO_SetPortValue (u8 u8PortId, u8 u8PortVal)
+[v _DIO_SetPortValue `(v ~T0 @X0 1 ef2`uc`uc ]
+"149
+[; ;DIO_Prog.c: 149: {
+{
+[e :U _DIO_SetPortValue ]
+"148
+[; ;DIO_Prog.c: 148: void DIO_SetPortValue (u8 u8PortId, u8 u8PortVal)
+[v _u8PortId `uc ~T0 @X0 1 r1 ]
+[v _u8PortVal `uc ~T0 @X0 1 r2 ]
+"149
+[; ;DIO_Prog.c: 149: {
+[f ]
+"151
+[; ;DIO_Prog.c: 151:  switch (u8PortId)
+[e $U 58  ]
+"152
+[; ;DIO_Prog.c: 152:  {
+{
+"153
+[; ;DIO_Prog.c: 153:    case 0: (*((volatile u8*)0x05)) = u8PortVal; break;
+[e :U 59 ]
+[e = *U -> -> 5 `i `*Vuc _u8PortVal ]
+[e $U 57  ]
+"154
+[; ;DIO_Prog.c: 154:    case 1: (*((volatile u8*)0x06)) = u8PortVal; break;
+[e :U 60 ]
+[e = *U -> -> 6 `i `*Vuc _u8PortVal ]
+[e $U 57  ]
+"155
+[; ;DIO_Prog.c: 155:    case 2: (*((volatile u8*)0x07)) = u8PortVal; break;
+[e :U 61 ]
+[e = *U -> -> 7 `i `*Vuc _u8PortVal ]
+[e $U 57  ]
+"156
+[; ;DIO_Prog.c: 156:    case 3: (*((volatile u8*)0x08)) = u8PortVal; break;
+[e :U 62 ]
+[e = *U -> -> 8 `i `*Vuc _u8PortVal ]
+[e $U 57  ]
+"157
+[; ;DIO_Prog.c: 157:   default: break;
+[e :U 63 ]
+[e $U 57  ]
+"158
+[; ;DIO_Prog.c: 158:  }
+}
+[e $U 57  ]
+[e :U 58 ]
+[e [\ -> _u8PortId `i , $ -> 0 `i 59
+ , $ -> 1 `i 60
+ , $ -> 2 `i 61
+ , $ -> 3 `i 62
+ 63 ]
+[e :U 57 ]
+"159
+[; ;DIO_Prog.c: 159: }
+[e :UE 56 ]
+}

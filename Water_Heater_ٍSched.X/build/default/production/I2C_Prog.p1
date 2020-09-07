@@ -1,0 +1,195 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"43 ./DIO_Interface.h
+[; ;./DIO_Interface.h: 43: void DIO_SetPinDirection (u8 u8PortIdCopy, u8 u8PinIdCopy, u8 u8PinDirCopy);
+[v _DIO_SetPinDirection `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"16 I2C_Prog.c
+[; ;I2C_Prog.c: 16: void I2C_Init (void)
+[v _I2C_Init `(v ~T0 @X0 1 ef ]
+"17
+[; ;I2C_Prog.c: 17: {
+{
+[e :U _I2C_Init ]
+[f ]
+"19
+[; ;I2C_Prog.c: 19:     (*((volatile u8*)0x93)) = (20000000/(4*1000000)) - 1;
+[e = *U -> -> 147 `i `*Vuc -> - / -> 20000000 `l * -> -> 4 `i `l -> 1000000 `l -> -> 1 `i `l `uc ]
+"21
+[; ;I2C_Prog.c: 21:     (*((volatile u8*)0x14)) = 0b00101000 ;
+[e = *U -> -> 20 `i `*Vuc -> -> 40 `i `uc ]
+"25
+[; ;I2C_Prog.c: 25:     (*((volatile u8*)0x94)) = 0x00 ;
+[e = *U -> -> 148 `i `*Vuc -> -> 0 `i `uc ]
+"27
+[; ;I2C_Prog.c: 27:     DIO_SetPinDirection(2 , 3 , 0) ;
+[e ( _DIO_SetPinDirection (3 , , -> -> 2 `i `uc -> -> 3 `i `uc -> -> 0 `i `uc ]
+"28
+[; ;I2C_Prog.c: 28:     DIO_SetPinDirection(2 , 4 , 0) ;
+[e ( _DIO_SetPinDirection (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> -> 0 `i `uc ]
+"30
+[; ;I2C_Prog.c: 30: }
+[e :UE 1 ]
+}
+"34
+[; ;I2C_Prog.c: 34: void I2C_Hold (void)
+[v _I2C_Hold `(v ~T0 @X0 1 ef ]
+"35
+[; ;I2C_Prog.c: 35: {
+{
+[e :U _I2C_Hold ]
+[f ]
+"37
+[; ;I2C_Prog.c: 37:     while ( ((*((volatile u8*)0x94)) & 0x04) || ((*((volatile u8*)0x91)) & 0x1F)) ;
+[e $U 3  ]
+[e :U 4 ]
+[e :U 3 ]
+[e $ || != & -> *U -> -> 148 `i `*Vuc `i -> 4 `i -> 0 `i != & -> *U -> -> 145 `i `*Vuc `i -> 31 `i -> 0 `i 4  ]
+[e :U 5 ]
+"38
+[; ;I2C_Prog.c: 38: }
+[e :UE 2 ]
+}
+"42
+[; ;I2C_Prog.c: 42: void I2CBegin (void)
+[v _I2CBegin `(v ~T0 @X0 1 ef ]
+"43
+[; ;I2C_Prog.c: 43: {
+{
+[e :U _I2CBegin ]
+[f ]
+"44
+[; ;I2C_Prog.c: 44:      I2C_Hold() ;
+[e ( _I2C_Hold ..  ]
+"45
+[; ;I2C_Prog.c: 45:     ((*((volatile u8*)0x91))) |= (1 << (0)) ;
+[e =| *U -> -> 145 `i `*Vuc -> << -> 1 `i -> 0 `i `uc ]
+"47
+[; ;I2C_Prog.c: 47: }
+[e :UE 6 ]
+}
+"49
+[; ;I2C_Prog.c: 49: void I2C_RepeatedStart (void)
+[v _I2C_RepeatedStart `(v ~T0 @X0 1 ef ]
+"50
+[; ;I2C_Prog.c: 50: {
+{
+[e :U _I2C_RepeatedStart ]
+[f ]
+"51
+[; ;I2C_Prog.c: 51:          I2C_Hold() ;
+[e ( _I2C_Hold ..  ]
+"53
+[; ;I2C_Prog.c: 53:      ((*((volatile u8*)0x91))) |= (1 << (1)) ;
+[e =| *U -> -> 145 `i `*Vuc -> << -> 1 `i -> 1 `i `uc ]
+"54
+[; ;I2C_Prog.c: 54: }
+[e :UE 7 ]
+}
+"57
+[; ;I2C_Prog.c: 57: void I2C_End (void)
+[v _I2C_End `(v ~T0 @X0 1 ef ]
+"58
+[; ;I2C_Prog.c: 58: {
+{
+[e :U _I2C_End ]
+[f ]
+"59
+[; ;I2C_Prog.c: 59:    I2C_Hold() ;
+[e ( _I2C_Hold ..  ]
+"60
+[; ;I2C_Prog.c: 60:    ((*((volatile u8*)0x91))) |= (1 << (2)) ;
+[e =| *U -> -> 145 `i `*Vuc -> << -> 1 `i -> 2 `i `uc ]
+"63
+[; ;I2C_Prog.c: 63: }
+[e :UE 8 ]
+}
+"67
+[; ;I2C_Prog.c: 67: void I2C_Write (u8 u8_Data )
+[v _I2C_Write `(v ~T0 @X0 1 ef1`uc ]
+"68
+[; ;I2C_Prog.c: 68: {
+{
+[e :U _I2C_Write ]
+"67
+[; ;I2C_Prog.c: 67: void I2C_Write (u8 u8_Data )
+[v _u8_Data `uc ~T0 @X0 1 r1 ]
+"68
+[; ;I2C_Prog.c: 68: {
+[f ]
+"69
+[; ;I2C_Prog.c: 69:     I2C_Hold();
+[e ( _I2C_Hold ..  ]
+"70
+[; ;I2C_Prog.c: 70:     (*((volatile u8*)0x13)) = u8_Data ;
+[e = *U -> -> 19 `i `*Vuc _u8_Data ]
+"71
+[; ;I2C_Prog.c: 71: }
+[e :UE 9 ]
+}
+"76
+[; ;I2C_Prog.c: 76: u8 I2C_Read (u8 ack)
+[v _I2C_Read `(uc ~T0 @X0 1 ef1`uc ]
+"77
+[; ;I2C_Prog.c: 77: {
+{
+[e :U _I2C_Read ]
+"76
+[; ;I2C_Prog.c: 76: u8 I2C_Read (u8 ack)
+[v _ack `uc ~T0 @X0 1 r1 ]
+"77
+[; ;I2C_Prog.c: 77: {
+[f ]
+"78
+[; ;I2C_Prog.c: 78:     u8 u8_DataRead ;
+[v _u8_DataRead `uc ~T0 @X0 1 a ]
+"79
+[; ;I2C_Prog.c: 79:     I2C_Hold() ;
+[e ( _I2C_Hold ..  ]
+"80
+[; ;I2C_Prog.c: 80:     ((*((volatile u8*)0x91))) |= (1 << (3)) ;
+[e =| *U -> -> 145 `i `*Vuc -> << -> 1 `i -> 3 `i `uc ]
+"82
+[; ;I2C_Prog.c: 82:     I2C_Hold() ;
+[e ( _I2C_Hold ..  ]
+"83
+[; ;I2C_Prog.c: 83:     u8_DataRead = (*((volatile u8*)0x13)) ;
+[e = _u8_DataRead *U -> -> 19 `i `*Vuc ]
+"85
+[; ;I2C_Prog.c: 85:     I2C_Hold() ;
+[e ( _I2C_Hold ..  ]
+"87
+[; ;I2C_Prog.c: 87:     if (ack)
+[e $ ! != -> _ack `i -> 0 `i 11  ]
+"88
+[; ;I2C_Prog.c: 88:     {
+{
+"89
+[; ;I2C_Prog.c: 89:         ((*((volatile u8*)0x91))) |= (1 << (5));
+[e =| *U -> -> 145 `i `*Vuc -> << -> 1 `i -> 5 `i `uc ]
+"90
+[; ;I2C_Prog.c: 90:     }
+}
+[e $U 12  ]
+"91
+[; ;I2C_Prog.c: 91:     else
+[e :U 11 ]
+"92
+[; ;I2C_Prog.c: 92:     {
+{
+"93
+[; ;I2C_Prog.c: 93:         ((*((volatile u8*)0x91))) &= ~(1 << (5));
+[e =& *U -> -> 145 `i `*Vuc -> ~ << -> 1 `i -> 5 `i `uc ]
+"95
+[; ;I2C_Prog.c: 95:     }
+}
+[e :U 12 ]
+"97
+[; ;I2C_Prog.c: 97:     ((*((volatile u8*)0x91))) |= (1 << (4)) ;
+[e =| *U -> -> 145 `i `*Vuc -> << -> 1 `i -> 4 `i `uc ]
+"99
+[; ;I2C_Prog.c: 99:     return u8_DataRead ;
+[e ) _u8_DataRead ]
+[e $UE 10  ]
+"100
+[; ;I2C_Prog.c: 100: }
+[e :UE 10 ]
+}
